@@ -1,7 +1,14 @@
-.container{padding: 5em;
-border: 5px solid #0b5ed7;
-max-width: 50%;}
+
+.container{padding: 2.5em;
+border: 2px solid #0b5ed7;
+max-width: 50%;
+box-shadow:1px 1px 20px 1px #0b5ed7;
+border-radius: 20px;}
 
 .navbar{
-    margin-bottom: 10%;
+    margin-bottom: 2.5em;
+}
+.btn{
+    color:"white";
+    background-Color:"#1e1e1f"
 }
