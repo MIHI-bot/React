@@ -1,14 +1,18 @@
 
-.container{padding: 2.5em;
-border: 2px solid #0b5ed7;
+.container{
 max-width: 50%;
-box-shadow:1px 1px 20px 1px #0b5ed7;
-border-radius: 20px;}
+}
+#textarea{
+    font-weight: bold;
+    resize: none;
+    /* background-color: rgb(4, 4, 31); */
+}
 
-.navbar{
-    margin-bottom: 2.5em;
-}
-.btn{
-    color:"white";
-    background-Color:"#1e1e1f"
-}
+.lertDiv{
+    min-height: 10vh;
+    
+    }
+
+
+
+

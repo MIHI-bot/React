@@ -1,30 +1,75 @@
 
-import About from './About';
+// import About from './About';
 import './App.css';
 import Navbar from './Component/Navbar';
-// import Password from './Component/Password';
+import { useState } from 'react';
+import Password from './Component/Password';
 import Textform from './Component/Textform';
+// import About from './Component/About';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 function App() {
+  // const [alert, setalert] = useState()
+  // const showAlert =(message,type)=>{
+    // setalert({
+    //   msg:message,
+    //   type:type
+    // })
+    // setTimeout(()=>{
+    //   setalert(null);}
+    //   ,1500
+    // );
 
+  // }
+  const [mode, setmode] = useState("light")
+  const togglemode=()=>{
+    if (mode === "dark"){
+      setmode("light");
+      document.body.style.backgroundColor ="white"
+      document.body.style.color ="black"
+document.body.style.transition="0.4s"
+      document.getElementById("textarea").style.backgroundColor ="white"
+      document.getElementById("textarea").style.color="black"
+      // showAlert()
+
+      // setalert({
+      //   msg:"Light mode has enabled",
+      //   type:"success"
+      // })
+    }
+    else {
+      setmode("dark"); 
+      // showAlert()
+      document.body.style.backgroundColor ="rgb(4,4,31)"
+      document.body.style.color ="white"
+      document.body.style.transition="0.4s"
+      document.getElementById("textarea").style.backgroundColor="rgb(34, 33, 33)"
+      document.getElementById("textarea").style.color="white"
+      // setalert({
+      //   msg:"Dark mode has enabled",
+      //   type:"success"
+      // })
+
+    }
+  }
     return ( 
-        <>
-<Navbar title = {7 } home ='Go to home'/>
-
-{/* <div className="container my-4" style={mystyle}>
-{/* <Password/> */}
-<Textform title= "Props from main file i.e App.js"/>
-{/* <div className="d-grid gap-3 col-6 mx-auto">
-  <button className="btn btn-primary" type="button" id = 'but'>Add files&nbsp;&nbsp;&nbsp;  <img className='icon' src="add_photo.svg" alt="icon" /></button>
-  <button className="btn btn-primary" type="button">Gallery &nbsp;&nbsp;&nbsp; <img src="photo_library.svg" alt="icon" /></button>
-</div> */}
-
-{/* </div> */}
- {/* /} */}
-
-<About/>
-    
-         </>
+      <BrowserRouter>
+        <Navbar title = {"Textutils"} home ='Home' mode = {mode} togglemode ={togglemode}  />       
+        <div className="lertDiv container"></div>
+        {/* <Navbar title = {"Textutils"} home ='Home' mode = {mode} togglemode ={togglemode} showAlert = {showAlert } />       
+        <div className="lertDiv container"></div> */}
+        <Routes>
+              {/* <Route path='/Home' home ="Main" element ={<Home/>}></Route> */}
+              <Route exact path="/" element={<Textform title= "Props from main file i.e App.js" />} />
+              <Route exact path="/Textform" element={<Textform title= "Props from main file i.e App.js" />} />
+              {/* <Route exact path="/Textform" element={<Textform title= "Props from main file i.e App.js" showAlert = {showAlert }/>} /> */}
+              <Route exact path="/Password" element={<Password />} />
+              {/* <Route exact path="/About" element={<About mode = {mode} togglemode ={togglemode} />} /> */}
+        </Routes>
+      </BrowserRouter>
     );
 }
-
 export default App;
