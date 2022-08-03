@@ -1,16 +1,15 @@
 
-// import About from './About';
 import './App.css';
-import Navbar from './Component/Navbar';
+import Navbar from './Navbar';
 import { useState } from 'react';
-import Password from './Component/Password';
-import Textform from './Component/Textform';
-// import About from './Component/About';
+import Password from './Password';
+import Textform from './Textform';
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
+
 function App() {
   // const [alert, setalert] = useState()
   // const showAlert =(message,type)=>{
@@ -67,7 +66,6 @@ document.body.style.transition="0.4s"
               <Route exact path="/Textform" element={<Textform title= "Props from main file i.e App.js" />} />
               {/* <Route exact path="/Textform" element={<Textform title= "Props from main file i.e App.js" showAlert = {showAlert }/>} /> */}
               <Route exact path="/Password" element={<Password />} />
-              {/* <Route exact path="/About" element={<About mode = {mode} togglemode ={togglemode} />} /> */}
         </Routes>
       </BrowserRouter>
     );
